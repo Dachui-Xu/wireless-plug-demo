@@ -23,29 +23,40 @@
 </block>
 
 
-<view class="scroll-view">
-  <block wx:if="{{isRwDpListShow}}">
-    <block wx:for="{{rwDpList}}" wx:key="{{item.code}}" wx:for-item="item">
-      <block wx:if="{{item.type === 'Boolean'}}">
-        <Boolean model:isChecked="{{item.value}}" dpCode="{{item.code}}" dpName="{{item.name}}" bind:sendDp="sendDp" />
-      </block>
-      <block wx:if="{{item.type === 'Integer'}}">
-        <Integer model:value="{{item.value}}" values="{{item.values}}" dpCode="{{item.code}}" dpName="{{item.name}}"
-          bind:sendDp="sendDp" />
-      </block>
-      <block wx:if="{{item.type === 'Enum'}}">
-        <Enum model:value="{{item.value}}" values="{{item.values}}" dpCode="{{item.code}}" dpName="{{item.name}}"
-          bind:sendDp="sendDp" />
-      </block>
-    </block>
-  </block>
+
+
+<!--标题-->
+
+<image class="common-panel-backgroud" />
+<navbar device_name="Dachui-Xu的插头" bind:jumpTodeviceEditPage="jumpTodeviceEditPage" />
+
+
+
+<!--功率面板-->
+
+<view class='center_col'>
+	<view class='center_block'>
+    <view>耗电量</view>
+    <view>25.0W*h</view>
+	</view>
+	<view class='center_block'>
+    <view>时长</view>
+    <view>2.0hour</view>
+	</view>
+	<view class='center_block'>
+    <view>电流</view>
+    <view>25mA</view>
+	</view>
 </view>
 
-<!--电量统计-->
-<view class="battery_Sta">
- <view class="battery_block">
-   <view class="bttery_name">电量</view>
-    <view class="battery_vaule">50% </view>
-    
- </view>
+<!--底部 按钮-->
+<view class='bottom_col'>
+	<view class='bottom_block'>
+		<image class="bottom_image" src='/image/大锤子.jpg'></image>
+		<view>开关</view>
+	</view>
+	<view class='bottom_block'>
+		<image class="bottom_image" src='/image/倒计时.jpg'></image>
+		<view>倒计时</view>
+	</view>
 </view>
